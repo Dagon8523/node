@@ -1,13 +1,18 @@
-var http = require("http");
-var {countries} = require("countries-list");
-var url= require("url");
+const express = require("express");
+const {info,error} = require("./modules/my-log");
+const {countries} = require("countries-list");
+
+const app=server();
+
+app.get('/',function(Request,Response){
+    Response.status(200).send("Hola esta es la pagina principal");
+});
 
 
-var server = http.createServer((Request,Response)=>{
-    var parsed = url.parse(Request.url)
-})
+app.listen(4000,function(){
+    console.log("corriendo por el puerto 4000");
+ });
 
-server.listen(4000);
-console.log("corriendo por el puerto 4000");
+ 
 
 
